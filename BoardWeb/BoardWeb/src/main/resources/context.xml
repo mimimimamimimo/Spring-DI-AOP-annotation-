@@ -1,0 +1,22 @@
+<xml version="1.0" encoding="UTF-8">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="collectionBean" class="com.springbook.ioc.injection.CollectionBean">
+<property name="addressList">   
+<!-- 생성자 주입은 처음에 결정되고 중간에 수정불가,세터주입은 그때그때 다른 꼴로 변경가능.
+대신, 의존성 생긴걸 con~아닌 propety로 xml에 넣어준다.클래스아니고 컬렉션이니까 빈 추가가 아니라 바로 밑에서 list value로 값 지정한다. 
+ -->
+<list>
+<value>서울시 강남구 역삼동</value>
+<value>서울시 강남구 역삼동</value>
+</list>
+</property>
+</bean>
+
+<!-- 엉뚱한 xml에 빈추가해서 null익센션 보지말자  -->
+
+
+</beans>
