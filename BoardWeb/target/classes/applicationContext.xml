@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+                                               
+                                               <!-- 어노테이션 설정. sts쓰s네임스페이스 탭에서 context선택해서 추가가능 -->
+                                                 <!-- 객체생성 후(생성자 호출 후) 멤버변수 초기화 init,파괴전 할 처리 destroy -->
+                                                 <!-- 객체하나만 만들 빈은 싱글톤패턴으로, scope 값 추가함 -->
+                                                 <!-- 메모리 누수 잡고싶으면 lazyunit 값 추가(로딩떄 아닌 런타임에 빈객체 생성) -->
+                                                 
+                                                 
+                                                 
+<context:component-scan base-package="com.springbook.biz"></context:component-scan>  
+<!-- 컴포넌트 사용할것이다~base-package값에 패키지 이름 적으면 그 패키지 파생된 클래스 모두 스캔 -->
+
+                                                 
+           <!--     어노테이션 지원하면 빈 직접 여기서 등록할 필요가 없다                                 
+<bean id="samsung" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod">
+<constructor-arg ref="apple"></constructor-arg>   생성자인젝션이 있는 경우 init보다도 먼저 실행 
+<constructor-arg value="2700000"></constructor-arg>  생성자 여러개면 인덱스 부여해서 고르기 가능 
+또한, 원래 생성자에 파라미터 있으면 생성자 파라미터에 인자 넣은 생성코드가 있어야하는데 TVUser보면 알겠지만 없다. 여기서 생성시 넣을 인자 정해주기 때문. 
+setter 주입도 있고  
+</bean>   클래스값은 대충쓰고 컨트롤 스페이스~ 
+<bean class="polymorphism.LgTV"/>   생략도 가능한데, 객체생성시엔 name이 꼭 있어야함 
+<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+-->
+
+
+
+
+
+<!--  <bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
+
+ 네임스페이스에 aop추가해야 빨간줄 안뜸 . log클래스 바꾸고 싶으면 윗줄만 바꾸면 됨.
+<aop:config>
+<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
+<aop:aspect ref="log">
+<aop:before pointcut-ref="allPointcut" method="printLog"/> 
+</aop:aspect>
+</aop:config>
+-->
+</beans>
+
+
+
+
+
+
+
+<!-- 빈등록 다하면 관리 힘들어짐. 데이터소스나 트랜잭션도 여기 등록하기 떄문. 그러므로 여러 xml파일로 나눠서 import시킨다. -->
+<!-- sony쓰다가 apple써도 xml만 고치면 됨!~~ -->
+<!-- p네임스페이스로 이름 관리 가능-->
