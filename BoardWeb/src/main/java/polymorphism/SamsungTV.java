@@ -1,6 +1,6 @@
 package polymorphism;
 
-
+import org.springframework.stereotype.Component;
 
 
 public class SamsungTV implements TV{
