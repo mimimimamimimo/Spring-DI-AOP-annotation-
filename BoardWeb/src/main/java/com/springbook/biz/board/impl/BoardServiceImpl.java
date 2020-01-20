@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.Log4Advice;
+import com.springbook.biz.common.LogAdvice;
 
 @Service("boardService")  //id는 대부분 클래스앞글자 소문자로 해서 쓴다
 public class BoardServiceImpl implements BoardService {
